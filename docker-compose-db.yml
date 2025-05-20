@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: cricket-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: cricket_admin
+      POSTGRES_PASSWORD: cricket_pass
+      POSTGRES_DB: cricket_app
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
